@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -188,13 +189,13 @@ namespace Diplom
         private void ribbonButton2_Click(object sender, EventArgs e)
         {
             flag = ribbonCheckBox1.Checked;
-            N = Convert.ToInt32(ribbonTextBox1.Text);
-            V = Convert.ToInt32(ribbonTextBox5.Text);
-            d = Convert.ToDouble(ribbonTextBox2.Text);
-            s = Convert.ToDouble(ribbonTextBox4.Text);
-            s = Convert.ToDouble(ribbonTextBox4.Text);
+            N = Convert.ToInt32(ribbonTextBox1.TextBoxText);
+            V = Convert.ToInt32(ribbonTextBox5.TextBoxText);
+            //d = Convert.ToDouble(ribbonTextBox2.TextBoxText);
+            d = double.Parse(ribbonTextBox2.TextBoxText, CultureInfo.InvariantCulture);
+            s = double.Parse(ribbonTextBox4.TextBoxText, CultureInfo.InvariantCulture);
 
-            Form2 form2 = new Form2();
+            Form2 form2 = new Form2(dataList, N, V, d, s, flag);
             form2.Show();
         }
     }

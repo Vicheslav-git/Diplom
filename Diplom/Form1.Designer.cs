@@ -29,6 +29,7 @@ namespace Diplom
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ribbon1 = new System.Windows.Forms.Ribbon();
             this.ribbonTab1 = new System.Windows.Forms.RibbonTab();
@@ -37,6 +38,13 @@ namespace Diplom
             this.ribbonTab2 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel2 = new System.Windows.Forms.RibbonPanel();
             this.ribbonButton2 = new System.Windows.Forms.RibbonButton();
+            this.ribbonPanel3 = new System.Windows.Forms.RibbonPanel();
+            this.ribbonCheckBox1 = new System.Windows.Forms.RibbonCheckBox();
+            this.ribbonTextBox1 = new System.Windows.Forms.RibbonTextBox();
+            this.ribbonSeparator1 = new System.Windows.Forms.RibbonSeparator();
+            this.ribbonTextBox2 = new System.Windows.Forms.RibbonTextBox();
+            this.ribbonTextBox4 = new System.Windows.Forms.RibbonTextBox();
+            this.ribbonTextBox5 = new System.Windows.Forms.RibbonTextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,14 +52,7 @@ namespace Diplom
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ribbonPanel3 = new System.Windows.Forms.RibbonPanel();
-            this.ribbonCheckBox1 = new System.Windows.Forms.RibbonCheckBox();
             this.ribbonTextBox3 = new System.Windows.Forms.RibbonTextBox();
-            this.ribbonTextBox1 = new System.Windows.Forms.RibbonTextBox();
-            this.ribbonSeparator1 = new System.Windows.Forms.RibbonSeparator();
-            this.ribbonTextBox2 = new System.Windows.Forms.RibbonTextBox();
-            this.ribbonTextBox4 = new System.Windows.Forms.RibbonTextBox();
-            this.ribbonTextBox5 = new System.Windows.Forms.RibbonTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,6 +101,7 @@ namespace Diplom
             this.ribbonButton1.LargeImage = global::Diplom.Properties.Resources.open__2_1;
             this.ribbonButton1.MinimumSize = new System.Drawing.Size(100, 0);
             this.ribbonButton1.Name = "ribbonButton1";
+            this.ribbonButton1.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton1.SmallImage")));
             this.ribbonButton1.Text = "Открыть файл";
             this.ribbonButton1.Click += new System.EventHandler(this.ribbonButton1_Click);
             // 
@@ -124,8 +126,61 @@ namespace Diplom
             this.ribbonButton2.Image = global::Diplom.Properties.Resources.settings__1_;
             this.ribbonButton2.LargeImage = global::Diplom.Properties.Resources.settings__1_;
             this.ribbonButton2.Name = "ribbonButton2";
+            this.ribbonButton2.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton2.SmallImage")));
             this.ribbonButton2.Text = "Оптимизировать";
             this.ribbonButton2.Click += new System.EventHandler(this.ribbonButton2_Click);
+            // 
+            // ribbonPanel3
+            // 
+            this.ribbonPanel3.ButtonMoreEnabled = false;
+            this.ribbonPanel3.ButtonMoreVisible = false;
+            this.ribbonPanel3.Items.Add(this.ribbonCheckBox1);
+            this.ribbonPanel3.Items.Add(this.ribbonTextBox1);
+            this.ribbonPanel3.Items.Add(this.ribbonSeparator1);
+            this.ribbonPanel3.Items.Add(this.ribbonTextBox2);
+            this.ribbonPanel3.Items.Add(this.ribbonTextBox4);
+            this.ribbonPanel3.Items.Add(this.ribbonTextBox5);
+            this.ribbonPanel3.Name = "ribbonPanel3";
+            this.ribbonPanel3.Text = "Параметры оптимизации";
+            // 
+            // ribbonCheckBox1
+            // 
+            this.ribbonCheckBox1.LabelWidth = 230;
+            this.ribbonCheckBox1.Name = "ribbonCheckBox1";
+            this.ribbonCheckBox1.Text = "Выводить промежуточные вычисления";
+            this.ribbonCheckBox1.TextClickable = false;
+            // 
+            // ribbonTextBox1
+            // 
+            this.ribbonTextBox1.LabelWidth = 150;
+            this.ribbonTextBox1.Name = "ribbonTextBox1";
+            this.ribbonTextBox1.Text = "Количество итераций (N)";
+            this.ribbonTextBox1.TextBoxText = "1000";
+            // 
+            // ribbonSeparator1
+            // 
+            this.ribbonSeparator1.Name = "ribbonSeparator1";
+            // 
+            // ribbonTextBox2
+            // 
+            this.ribbonTextBox2.LabelWidth = 250;
+            this.ribbonTextBox2.Name = "ribbonTextBox2";
+            this.ribbonTextBox2.Text = "Время инициализации (d) в секундах";
+            this.ribbonTextBox2.TextBoxText = "10e-8 ";
+            // 
+            // ribbonTextBox4
+            // 
+            this.ribbonTextBox4.LabelWidth = 250;
+            this.ribbonTextBox4.Name = "ribbonTextBox4";
+            this.ribbonTextBox4.Text = "Скорость выделения памяти (s) в байт/сек";
+            this.ribbonTextBox4.TextBoxText = "1e10";
+            // 
+            // ribbonTextBox5
+            // 
+            this.ribbonTextBox5.LabelWidth = 250;
+            this.ribbonTextBox5.Name = "ribbonTextBox5";
+            this.ribbonTextBox5.Text = "Доступный объем ОП в байтах";
+            this.ribbonTextBox5.TextBoxText = "140 ";
             // 
             // openFileDialog1
             // 
@@ -202,64 +257,12 @@ namespace Diplom
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
             // 
-            // ribbonPanel3
-            // 
-            this.ribbonPanel3.ButtonMoreEnabled = false;
-            this.ribbonPanel3.ButtonMoreVisible = false;
-            this.ribbonPanel3.Items.Add(this.ribbonCheckBox1);
-            this.ribbonPanel3.Items.Add(this.ribbonTextBox1);
-            this.ribbonPanel3.Items.Add(this.ribbonSeparator1);
-            this.ribbonPanel3.Items.Add(this.ribbonTextBox2);
-            this.ribbonPanel3.Items.Add(this.ribbonTextBox4);
-            this.ribbonPanel3.Items.Add(this.ribbonTextBox5);
-            this.ribbonPanel3.Name = "ribbonPanel3";
-            this.ribbonPanel3.Text = "Параметры оптимизации";
-            // 
-            // ribbonCheckBox1
-            // 
-            this.ribbonCheckBox1.LabelWidth = 230;
-            this.ribbonCheckBox1.Name = "ribbonCheckBox1";
-            this.ribbonCheckBox1.Text = "Выводить промежуточные вычисления";
-            this.ribbonCheckBox1.TextClickable = false;
-            // 
             // ribbonTextBox3
             // 
             this.ribbonTextBox3.LabelWidth = 150;
             this.ribbonTextBox3.Name = "ribbonTextBox3";
             this.ribbonTextBox3.Text = "Количество итераций (N)";
             this.ribbonTextBox3.TextBoxText = "";
-            // 
-            // ribbonTextBox1
-            // 
-            this.ribbonTextBox1.LabelWidth = 150;
-            this.ribbonTextBox1.Name = "ribbonTextBox1";
-            this.ribbonTextBox1.Text = "Количество итераций (N)";
-            this.ribbonTextBox1.TextBoxText = "1000";
-            // 
-            // ribbonSeparator1
-            // 
-            this.ribbonSeparator1.Name = "ribbonSeparator1";
-            // 
-            // ribbonTextBox2
-            // 
-            this.ribbonTextBox2.LabelWidth = 250;
-            this.ribbonTextBox2.Name = "ribbonTextBox2";
-            this.ribbonTextBox2.Text = "Время инициализации (d) в секундах";
-            this.ribbonTextBox2.TextBoxText = "10Е-8 ";
-            // 
-            // ribbonTextBox4
-            // 
-            this.ribbonTextBox4.LabelWidth = 250;
-            this.ribbonTextBox4.Name = "ribbonTextBox4";
-            this.ribbonTextBox4.Text = "Скорость выделения памяти (s) в байт/сек";
-            this.ribbonTextBox4.TextBoxText = "1E10";
-            // 
-            // ribbonTextBox5
-            // 
-            this.ribbonTextBox5.LabelWidth = 250;
-            this.ribbonTextBox5.Name = "ribbonTextBox5";
-            this.ribbonTextBox5.Text = "Доступный объем ОП в байтах";
-            this.ribbonTextBox5.TextBoxText = "140 ";
             // 
             // Form1
             // 
@@ -270,7 +273,7 @@ namespace Diplom
             this.Controls.Add(this.ribbon1);
             this.KeyPreview = true;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Дипломная работа";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

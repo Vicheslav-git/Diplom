@@ -20,6 +20,8 @@ namespace Diplom
         public static bool flag;
         public static List<Data> data;
 
+        int V_current;
+
         public Form2(List<Data> dataList, int a, int b, double c, double d, bool e)
         {
             InitializeComponent();
@@ -30,45 +32,23 @@ namespace Diplom
             s = d;
             flag = e;
 
-        }
+            int[] currentStrategy = new int[data.Count];
 
-        private void button1_Click(object sender, EventArgs e)
-        {
 
-        }
+            for (int iteration = 0; iteration < N; iteration++)
+            {
+                V_current = 0;
 
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
+                Random rnd = new Random(DateTime.Now.Second);
 
-        }
+                for (int i = 0; i < data.Count; i++)
+                {
+                    currentStrategy[i] = (int)Math.Round(rnd.NextDouble());
+                    V_current += (1- currentStrategy[i]) * data[i].m_size;
+                }
 
-        private void textBox14_TextChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        private void textBox5_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox12_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox13_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
+            }
 
         }
     }
