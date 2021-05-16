@@ -192,11 +192,23 @@ namespace Diplom
             N = Convert.ToInt32(ribbonTextBox1.TextBoxText);
             V = Convert.ToInt32(ribbonTextBox5.TextBoxText);
             //d = Convert.ToDouble(ribbonTextBox2.TextBoxText);
-            d = double.Parse(ribbonTextBox2.TextBoxText, CultureInfo.InvariantCulture);
-            s = double.Parse(ribbonTextBox4.TextBoxText, CultureInfo.InvariantCulture);
 
-            Form2 form2 = new Form2(dataList, N, V, d, s, flag);
-            form2.Show();
+            d = double.Parse(ribbonTextBox2.TextBoxText, NumberStyles.Float);
+            s = double.Parse(ribbonTextBox4.TextBoxText, NumberStyles.Float);
+
+            if (map.Count != 0)
+            {
+
+                Form2 form2 = new Form2(dataList, N, V, d, s, flag);
+                if (!flag)
+                {
+                    form2.Width = 235;
+                }
+                form2.ShowDialog();
+            } else
+            {
+                MessageBox.Show("Отсутствуют данные для анализа,* выберите корректный файл!");
+            }
         }
     }
 
